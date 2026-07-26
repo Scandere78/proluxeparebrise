@@ -57,7 +57,7 @@ const SERVICES: Service[] = [
 
 export function IconGridSection() {
   return (
-    <section className="relative bg-navy py-[70px] sm:py-[90px]">
+    <section className="relative bg-white py-[70px] sm:py-[90px]">
       <div className="wrap">
         <motion.div
           initial="hidden"
@@ -69,7 +69,7 @@ export function IconGridSection() {
           <motion.div variants={fadeUp}>
             <div className="eyebrow">NOS SERVICES VITRAGE</div>
             <h2
-              className="display mt-[18px] text-white"
+              className="display mt-[18px] text-blue-ink"
               style={{ fontSize: "clamp(40px, 6vw, 64px)" }}
             >
               On répare tout
@@ -79,11 +79,11 @@ export function IconGridSection() {
           </motion.div>
           <motion.p
             variants={fadeUp}
-            className="max-w-[520px] text-[16px] leading-[1.65] text-white/70"
+            className="max-w-[520px] text-[16px] leading-[1.65] text-ink-dim"
           >
             Du simple impact au remplacement complet en passant par le calibrage des caméras
             d&apos;aide à la conduite — notre équipe technique intervient sur{" "}
-            <strong className="text-white">tous types de vitrage automobile</strong>.
+            <strong className="text-blue-ink">tous types de vitrage automobile</strong>.
           </motion.p>
         </motion.div>
 
@@ -108,7 +108,7 @@ export function IconGridSection() {
               <div
                 className={cn(
                   "relative aspect-square w-full overflow-hidden",
-                  s.fit === "contain" ? "bg-navy-deep" : ""
+                  s.fit === "contain" ? "bg-blue-soft" : ""
                 )}
               >
                 <Image
@@ -125,7 +125,7 @@ export function IconGridSection() {
                 {s.fit !== "contain" && (
                   <div
                     aria-hidden
-                    className="absolute inset-0 bg-gradient-to-t from-navy via-navy/40 to-navy/10 transition-opacity duration-500"
+                    className="absolute inset-0 bg-gradient-to-t from-blue-ink via-blue-ink/40 to-blue-ink/10 transition-opacity duration-500"
                   />
                 )}
                 {/* red veil */}

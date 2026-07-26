@@ -61,7 +61,7 @@ export function BenefitsSection() {
         >
           <span className="h-9 w-1 flex-shrink-0 bg-red" />
           <h2
-            className="display text-navy"
+            className="display text-blue-ink"
             style={{ fontSize: "clamp(40px, 6vw, 64px)" }}
           >
             Vos avantages
@@ -79,7 +79,7 @@ export function BenefitsSection() {
             <motion.article
               key={c.title}
               variants={fadeUp}
-              className="relative flex flex-col overflow-hidden rounded border border-navy/[0.08] bg-white px-7 py-8"
+              className="relative flex flex-col overflow-hidden rounded border border-line bg-white px-7 py-8"
             >
               {c.featured && (
                 <div className="absolute -right-[38px] top-[18px] rotate-[35deg] bg-red px-10 py-1 text-[10px] font-extrabold uppercase tracking-[0.14em] text-white">
@@ -89,8 +89,8 @@ export function BenefitsSection() {
               <div className="mb-[14px] text-[11px] font-extrabold uppercase tracking-[0.14em] text-red">
                 {c.tag}
               </div>
-              <h3 className="display text-[32px] text-navy">{c.title}</h3>
-              <div className="mt-[22px] flex items-baseline gap-2 border-b border-navy/[0.08] pb-[18px]">
+              <h3 className="display text-[32px] text-blue-ink">{c.title}</h3>
+              <div className="mt-[22px] flex items-baseline gap-2 border-b border-line pb-[18px]">
                 {c.price.label && (
                   <span className="text-[10px] font-extrabold uppercase tracking-[0.14em] text-ink-mute">
                     {c.price.label}
@@ -99,7 +99,7 @@ export function BenefitsSection() {
                 <span className="display text-[64px] leading-none text-red">
                   {c.price.num}
                 </span>
-                <span className="display text-[32px] text-navy">{c.price.unit}</span>
+                <span className="display text-[32px] text-blue-ink">{c.price.unit}</span>
                 {c.price.suffix && (
                   <span className="ml-auto text-[10px] font-extrabold uppercase tracking-[0.14em] text-ink-mute">
                     {c.price.suffix}
@@ -111,7 +111,7 @@ export function BenefitsSection() {
                 {c.bullets.map((b) => (
                   <li
                     key={b}
-                    className="flex items-center gap-[10px] border-b border-dashed border-navy/10 py-2 text-[13px] text-ink last:border-b-0"
+                    className="flex items-center gap-[10px] border-b border-dashed border-line py-2 text-[13px] text-ink last:border-b-0"
                   >
                     <Check className="h-[14px] w-[14px] flex-shrink-0 text-red" strokeWidth={3} />
                     {b}
@@ -143,7 +143,7 @@ export function Watermark({
     <div
       aria-hidden
       className={cn(
-        "display pointer-events-none absolute z-0 leading-none text-navy/[0.05]",
+        "display pointer-events-none absolute z-0 leading-none text-blue-ink/[0.06]",
         className
       )}
       style={{ fontSize: "clamp(70px, 12vw, 150px)" }}

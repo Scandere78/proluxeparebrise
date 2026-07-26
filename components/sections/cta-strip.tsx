@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { SITE } from "@/lib/site";
 
 export function CtaStripSection() {
   return (
@@ -22,7 +23,7 @@ export function CtaStripSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          href="tel:0123456789"
+          href={SITE.phone.href}
           className="btn btn-light"
         >
           Prendre RDV

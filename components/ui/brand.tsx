@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { SITE } from "@/lib/site";
 
-export function BrandMark({ className, size = 40 }: { className?: string; size?: number }) {
+export function BrandMark({ className, size = 46 }: { className?: string; size?: number }) {
   return (
     <Image
       src="/logo.png"
-      alt="Proluxe Pare Brise"
+      alt={SITE.legalName}
       width={size}
       height={size}
       priority
@@ -17,17 +18,25 @@ export function BrandMark({ className, size = 40 }: { className?: string; size?:
 export function Brand({
   className,
   showText = true,
+  markSize = 46,
 }: {
   className?: string;
   showText?: boolean;
+  markSize?: number;
 }) {
   return (
-    <a href="#hero" className={cn("flex items-center gap-2.5", className)} aria-label="Proluxe Pare Brise — Accueil">
-      <BrandMark />
+    <a
+      href="#hero"
+      className={cn("flex items-center gap-2.5", className)}
+      aria-label={`${SITE.legalName} — Accueil`}
+    >
+      <BrandMark size={markSize} />
       {showText && (
         <div className="font-display italic font-black uppercase leading-[0.95] text-white text-[22px] tracking-[-0.005em]">
-          PROLUXE
-          <small className="block text-[13px] text-red mt-[2px]">PARE BRISE</small>
+          {SITE.name}
+          <small className="block text-[11px] text-red mt-[2px] tracking-[0.02em]">
+            {SITE.tagline}
+          </small>
         </div>
       )}
     </a>

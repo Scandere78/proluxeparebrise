@@ -25,19 +25,20 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Proluxe Pare Brise — Réparation & remplacement vitrage automobile à Épône (78)",
+  title: "LCDP — La Centrale Des Pneus : réparation & remplacement vitrage automobile à Épône (78)",
   description:
-    "Centre Proluxe Pare Brise à Épône : réparation et remplacement de pare-brise toutes marques, toutes assurances. Franchise offerte, intervention en 1h30, RDV sous 24h. Chèque 150 € ou 4 pneus offerts.",
+    "LCDP — La Centrale Des Pneus à Épône : réparation et remplacement de pare-brise toutes marques, toutes assurances. Franchise offerte, intervention en 1h30, RDV sous 24h. Chèque 150 € ou 4 pneus offerts.",
   keywords: [
     "pare-brise Épône",
     "réparation pare-brise 78",
     "remplacement pare-brise toutes assurances",
     "franchise offerte pare-brise",
-    "Proluxe Pare Brise",
+    "LCDP",
+    "La Centrale Des Pneus",
   ],
-  authors: [{ name: "Proluxe Pare Brise" }],
+  authors: [{ name: "LCDP — La Centrale Des Pneus" }],
   openGraph: {
-    title: "Proluxe Pare Brise — Épône (78)",
+    title: "LCDP — La Centrale Des Pneus · Épône (78)",
     description:
       "Centre agréé toutes assurances. Franchise offerte, intervention en 1h30, RDV sous 24h.",
     locale: "fr_FR",
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0E1A2F",
+  themeColor: "#FFFFFF",
   width: "device-width",
   initialScale: 1,
 };

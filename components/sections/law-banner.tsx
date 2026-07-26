@@ -4,10 +4,11 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import { SITE } from "@/lib/site";
 
 export function LawBannerSection() {
   return (
-    <section className="relative overflow-hidden bg-navy py-[70px] sm:py-[90px] text-white">
+    <section className="relative overflow-hidden bg-blue py-[70px] sm:py-[90px] text-white">
       {/* Diagonal photo wedge on the right */}
       <motion.div
         initial={{ opacity: 0, scale: 1.02 }}
@@ -19,7 +20,7 @@ export function LawBannerSection() {
       >
         <Image
           src="/1.png"
-          alt="Atelier Proluxe Pare Brise"
+          alt={`Atelier ${SITE.legalName}`}
           fill
           sizes="55vw"
           className="object-cover"
@@ -82,7 +83,7 @@ export function LawBannerSection() {
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm">
               <Image
                 src="/1.png"
-                alt="Atelier Proluxe Pare Brise"
+                alt={`Atelier ${SITE.legalName}`}
                 fill
                 sizes="100vw"
                 className="object-cover"
@@ -97,13 +98,13 @@ export function LawBannerSection() {
             whileInView={{ opacity: 1, scale: 1, rotate: -8 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-            className="relative mx-auto mt-8 inline-block bg-white px-7 py-5 text-center text-navy shadow-[0_24px_60px_rgba(0,0,0,0.5)] lg:absolute lg:right-[8%] lg:top-1/2 lg:-translate-y-1/2 lg:mt-0"
+            className="relative mx-auto mt-8 inline-block bg-white px-7 py-5 text-center text-blue-ink shadow-[0_24px_60px_rgba(5,42,68,0.45)] lg:absolute lg:right-[8%] lg:top-1/2 lg:-translate-y-1/2 lg:mt-0"
           >
             <div className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-red">
               ★ 100 % LÉGAL
             </div>
             <div
-              className="display mt-[10px] text-navy"
+              className="display mt-[10px] text-blue-ink"
               style={{ fontSize: "clamp(36px, 5.5vw, 50px)" }}
             >
               LIBRE

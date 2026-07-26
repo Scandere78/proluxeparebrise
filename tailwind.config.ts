@@ -19,25 +19,37 @@ const config: Config = {
       },
     },
     extend: {
+      /**
+       * Palette LCDP — relevée dans « flyer LCDP ok recto verso.pdf » (CMJN)
+       * et recoupée sur les pixels de public/logo.png.
+       *   rouge  C0  M100 Y100 K0  →  #ED1C24 (logo : #EF1B27)
+       *   bleu   C85 M50  Y0   K0  →  #0681BD (logo : #0681BD → #006498)
+       *   jaune  C0  M0   Y100 K0  →  #FFF200 (accent étiquettes uniquement)
+       */
       colors: {
-        navy: {
-          DEFAULT: "#0E1A2F",
-          deep: "#091322",
-          2: "#152743",
+        blue: {
+          DEFAULT: "#0681BD",
+          dark: "#006498",
+          /* assombrissement du #0681BD à teinte constante (H 200°, S 94 %) */
+          deep: "#04547C",
+          ink: "#052A44",
+          soft: "#E8F2FA",
         },
-        line: "#1F3050",
         red: {
-          DEFAULT: "#EF4A2A",
-          dark: "#C13418",
-          light: "#FB6F50",
+          DEFAULT: "#ED1C24",
+          dark: "#BE161D",
+          light: "#F5555B",
         },
-        cream: "#F4F2EE",
+        sun: "#FFF200",
+        /* ambre Google — réservé aux étoiles de notation, hors palette LCDP */
+        star: "#FBBC04",
+        cream: "#F3F8FC",
+        line: "#D7E4EF",
         ink: {
-          DEFAULT: "#0E1A2F",
-          dim: "#5A6478",
-          mute: "#9099AA",
+          DEFAULT: "#052A44",
+          dim: "#4A6379",
+          mute: "#8399AC",
         },
-        sun: "#FFD453",
       },
       fontFamily: {
         display: ["var(--font-display)", "Barlow Condensed", "system-ui", "sans-serif"],

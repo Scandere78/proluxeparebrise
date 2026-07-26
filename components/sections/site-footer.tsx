@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { Brand } from "@/components/ui/brand";
 import { CtaStripSection } from "@/components/sections/cta-strip";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import { SITE } from "@/lib/site";
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="bg-navy-deep pt-0 text-white">
+    <footer id="contact" className="bg-blue-deep pt-0 text-white">
       <CtaStripSection />
 
       <div className="wrap mt-[60px]">
@@ -16,7 +17,7 @@ export function SiteFooter() {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={staggerContainer}
-          className="grid gap-9 border-b border-line pb-9 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]"
+          className="grid gap-9 border-b border-white/15 pb-9 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]"
         >
           <motion.div variants={fadeUp}>
             <Brand />
@@ -27,25 +28,25 @@ export function SiteFooter() {
           </motion.div>
 
           <FooterCol title="CONTACT" variants={fadeUp}>
-            <a href="tel:0123456789" className="font-bold">01 23 45 67 89</a>
-            <a href="mailto:contact@proluxe-parebrise.fr">contact@proluxe-parebrise.fr</a>
+            <a href={SITE.phone.href} className="font-bold">{SITE.phone.display}</a>
+            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
           </FooterCol>
 
           <FooterCol title="ADRESSE" variants={fadeUp}>
-            <p className="font-bold">Z.I des Ardilles</p>
-            <p>Chem. des Ardilles</p>
-            <p>78680 Épône</p>
+            <p className="font-bold">{SITE.address.line1}</p>
+            <p>{SITE.address.line2}</p>
+            <p>{SITE.address.city}</p>
           </FooterCol>
 
           <FooterCol title="HORAIRES" variants={fadeUp}>
-            <p className="font-bold">Lun – Sam</p>
-            <p>10h – 19h</p>
-            <p>Dimanche fermé</p>
+            <p className="font-bold">{SITE.hours.days}</p>
+            <p>{SITE.hours.range}</p>
+            <p>{SITE.hours.closed}</p>
           </FooterCol>
         </motion.div>
 
         <div className="flex flex-wrap justify-between gap-3 pb-6 pt-5 text-[12px] uppercase tracking-[0.1em] text-white/40">
-          <div>© Proluxe Pare Brise 2022 — Tous droits réservés</div>
+          <div>© {SITE.legalName} {SITE.since} — Tous droits réservés</div>
           <div>Mentions légales · CGV · Confidentialité</div>
         </div>
       </div>

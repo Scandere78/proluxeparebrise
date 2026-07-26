@@ -58,7 +58,7 @@ export function FaqSection() {
         >
           <span className="h-9 w-1 flex-shrink-0 bg-red" />
           <h2
-            className="display text-navy"
+            className="display text-blue-ink"
             style={{ fontSize: "clamp(40px, 6vw, 64px)" }}
           >
             Questions fréquentes
@@ -81,7 +81,7 @@ export function FaqSection() {
                 variants={fadeUp}
                 className={cn(
                   "mb-2 overflow-hidden rounded-xs bg-white transition-colors",
-                  isOpen ? "border-2 border-red" : "border border-navy/[0.08]"
+                  isOpen ? "border-2 border-red" : "border border-line"
                 )}
               >
                 <button
@@ -99,7 +99,7 @@ export function FaqSection() {
                     {idx}
                   </span>
                   <span
-                    className="display flex-1 text-left text-navy leading-[1.05]"
+                    className="display flex-1 text-left text-blue-ink leading-[1.05]"
                     style={{ fontSize: "clamp(18px, 2.4vw, 22px)" }}
                   >
                     {item.q}
@@ -109,7 +109,7 @@ export function FaqSection() {
                       "grid h-9 w-9 flex-shrink-0 place-items-center rounded-full border transition-all",
                       isOpen
                         ? "border-red bg-red text-white rotate-45"
-                        : "border-navy/15 text-navy"
+                        : "border-line text-blue-ink"
                     )}
                   >
                     <Plus className="h-[14px] w-[14px]" strokeWidth={3} />

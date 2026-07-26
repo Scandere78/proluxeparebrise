@@ -1,6 +1,6 @@
-# Proluxe Pare-brise — Site vitrine
+# LCDP — La Centrale Des Pneus · Site vitrine
 
-Site one-page premium pour le centre de réparation et remplacement de pare-brise **Proluxe Pare-brise** à Épône (78680).
+Site one-page premium pour le centre de réparation et remplacement de pare-brise **LCDP — La Centrale Des Pneus** à Épône (78680).
 
 ## Stack
 
@@ -47,4 +47,6 @@ styles/
 
 ## Contenu personnalisable
 
-Toutes les données client (adresse, horaires, numéro de téléphone, FAQ) sont dans les fichiers `components/sections/*.tsx`. Le numéro placeholder `+33000000000` est à remplacer.
+Nom de marque, téléphone, e-mail, adresse et horaires sont centralisés dans **`lib/site.ts`** (constante `SITE`) — modifier ce fichier met à jour la nav, le hero, les CTA, le footer et le SEO d'un coup.
+
+Le reste du contenu éditorial (services, avantages, avis, FAQ) est dans `components/sections/*.tsx`.

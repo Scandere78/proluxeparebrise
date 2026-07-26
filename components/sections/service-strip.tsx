@@ -43,7 +43,7 @@ export function ServiceStripSection() {
               key={s.title}
               href="#rdv"
               variants={fadeUp}
-              className="group relative block overflow-hidden rounded-sm bg-black/15 transition-shadow hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.5)]"
+              className="group relative block overflow-hidden rounded-sm bg-black/15 transition-shadow hover:shadow-[0_30px_60px_-20px_rgba(5,42,68,0.5)]"
             >
               {/* PHOTO */}
               <div className="relative aspect-[16/10] w-full overflow-hidden">
@@ -89,7 +89,7 @@ export function ServiceStripSection() {
               {/* Text panel */}
               <div className="relative flex items-center justify-between gap-4 px-5 py-5 sm:px-6 sm:py-6">
                 <p className="text-[14px] leading-[1.5] text-white/90">{s.desc}</p>
-                <span className="inline-flex flex-shrink-0 items-center gap-2 rounded-xs bg-white px-4 py-[10px] text-[12px] font-extrabold uppercase tracking-[0.08em] text-navy transition-colors group-hover:bg-sun">
+                <span className="inline-flex flex-shrink-0 items-center gap-2 rounded-xs bg-white px-4 py-[10px] text-[12px] font-extrabold uppercase tracking-[0.08em] text-blue-ink transition-colors group-hover:bg-blue group-hover:text-white">
                   Tarif →
                 </span>
               </div>

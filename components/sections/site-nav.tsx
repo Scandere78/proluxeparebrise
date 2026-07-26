@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X } from "lucide-react";
 import { Brand, BrandMark } from "@/components/ui/brand";
+import { SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
@@ -42,18 +43,20 @@ export function SiteNav() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 border-b border-white/5 bg-navy-deep py-[18px]">
+      <nav className="sticky top-0 z-50 border-b border-line bg-white py-[14px] shadow-[0_1px_20px_rgba(5,42,68,0.06)]">
         <div className="wrap flex items-center gap-3 sm:gap-6">
-          <Brand />
+          <Brand showText={false} markSize={64} />
 
-          <div className="mx-auto hidden items-center gap-1 rounded-full bg-white/5 p-[6px] lg:flex">
+          <div className="mx-auto hidden items-center gap-1 rounded-full bg-blue-soft p-[6px] lg:flex">
             {NAV_LINKS.map((l) => (
               <a
                 key={l.id}
                 href={l.href}
                 className={cn(
-                  "rounded-full px-[18px] py-[10px] text-[12px] font-bold uppercase tracking-[0.06em] text-white transition-colors",
-                  active === l.id ? "bg-white/10" : "hover:bg-white/10"
+                  "rounded-full px-[18px] py-[10px] text-[12px] font-bold uppercase tracking-[0.06em] transition-colors",
+                  active === l.id
+                    ? "bg-blue text-white"
+                    : "text-ink-dim hover:bg-white hover:text-blue"
                 )}
               >
                 {l.label}
@@ -62,7 +65,7 @@ export function SiteNav() {
           </div>
 
           <a
-            href="tel:0123456789"
+            href={SITE.phone.href}
             className="hidden items-center gap-[10px] rounded-full bg-red px-[22px] py-3 pl-[14px] text-[13px] font-extrabold uppercase tracking-[0.06em] text-white transition-colors hover:bg-red-dark lg:inline-flex"
           >
             <span className="grid h-[26px] w-[26px] place-items-center rounded-full bg-white text-red">
@@ -75,9 +78,9 @@ export function SiteNav() {
             type="button"
             aria-label="Menu"
             onClick={() => setOpen(true)}
-            className="ml-auto grid h-11 w-11 place-items-center rounded-lg bg-white/[0.08] lg:hidden"
+            className="ml-auto grid h-11 w-11 place-items-center rounded-lg bg-blue-soft lg:hidden"
           >
-            <Menu className="h-[22px] w-[22px] text-white" strokeWidth={2.5} />
+            <Menu className="h-[22px] w-[22px] text-blue-ink" strokeWidth={2.5} />
           </button>
         </div>
       </nav>
@@ -89,15 +92,15 @@ export function SiteNav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] flex flex-col bg-navy-deep p-6"
+            className="fixed inset-0 z-[100] flex flex-col bg-white p-6"
           >
             <button
               type="button"
               aria-label="Fermer"
               onClick={() => setOpen(false)}
-              className="self-end grid h-11 w-11 place-items-center rounded-lg bg-white/[0.08]"
+              className="self-end grid h-11 w-11 place-items-center rounded-lg bg-blue-soft"
             >
-              <X className="h-[22px] w-[22px] text-white" strokeWidth={2.5} />
+              <X className="h-[22px] w-[22px] text-blue-ink" strokeWidth={2.5} />
             </button>
 
             {NAV_LINKS.concat({ label: "FAQ", href: "#faq", id: "faq" }).map((l, i) => (
@@ -108,7 +111,7 @@ export function SiteNav() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.05 + i * 0.04 }}
-                className="display border-b border-line py-[18px] text-[32px] text-white last:border-b-0"
+                className="display border-b border-line py-[18px] text-[32px] text-blue-ink last:border-b-0"
               >
                 {l.label}
               </motion.a>
@@ -123,11 +126,7 @@ export function SiteNav() {
             </a>
 
             <div className="mt-auto flex items-center gap-3 pt-6">
-              <BrandMark />
-              <div className="font-display italic font-black uppercase text-white text-[16px] leading-[0.95]">
-                PROLUXE
-                <small className="block text-[11px] text-red">PARE BRISE</small>
-              </div>
+              <BrandMark size={72} />
             </div>
           </motion.aside>
         )}

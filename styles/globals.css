@@ -7,8 +7,8 @@
   html, body { margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    background: #0E1A2F;
-    color: #FFFFFF;
+    background: #FFFFFF;
+    color: #052A44;
     font-family: var(--font-sans), system-ui, sans-serif;
     font-size: 16px;
     line-height: 1.55;
@@ -22,7 +22,7 @@
   button { font-family: inherit; cursor: pointer; }
 
   ::selection {
-    background: #EF4A2A;
+    background: #ED1C24;
     color: #fff;
   }
 
@@ -55,7 +55,7 @@
     font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #EF4A2A;
+    color: #ED1C24;
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -66,7 +66,7 @@
     height: 1.5px;
     background: currentColor;
   }
-  .eyebrow.dim { color: #9099AA; }
+  .eyebrow.dim { color: #8399AC; }
 
   /* Buttons base */
   .btn {
@@ -85,14 +85,14 @@
     white-space: nowrap;
   }
   .btn:hover { transform: translateY(-1px); }
-  .btn-primary { background: #EF4A2A; color: #fff; }
-  .btn-primary:hover { background: #C13418; }
-  .btn-light { background: #fff; color: #0E1A2F; }
-  .btn-light:hover { background: #F4F2EE; }
-  .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.25); }
-  .btn-ghost:hover { border-color: rgba(255, 255, 255, 0.6); }
-  .btn-dark { background: #0E1A2F; color: #fff; }
-  .btn-dark:hover { background: #091322; }
+  .btn-primary { background: #ED1C24; color: #fff; }
+  .btn-primary:hover { background: #BE161D; }
+  .btn-light { background: #fff; color: #052A44; }
+  .btn-light:hover { background: #E8F2FA; }
+  .btn-ghost { background: transparent; color: #052A44; border: 1px solid rgba(5, 42, 68, 0.22); }
+  .btn-ghost:hover { border-color: #0681BD; color: #0681BD; }
+  .btn-dark { background: #04395C; color: #fff; }
+  .btn-dark:hover { background: #052A44; }
   .btn-skewed {
     clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%);
     padding-right: 36px;
@@ -101,10 +101,10 @@
   .photo-placeholder {
     position: absolute;
     inset: 0;
-    background: #1a2235;
+    background: #04395C;
     background-image:
       repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.025) 0 2px, transparent 2px 14px),
-      linear-gradient(135deg, #243553 0%, #0a1424 100%);
+      linear-gradient(135deg, #0681BD 0%, #04395C 100%);
     display: grid;
     place-items: center;
     font-family: var(--font-mono), monospace;
@@ -123,7 +123,7 @@
     right: 0;
     width: 55%;
     height: 100%;
-    background: #EF4A2A;
+    background: #ED1C24;
     clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
   }
   @media (max-width: 820px) {

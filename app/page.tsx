@@ -5,7 +5,6 @@ import { ServiceStripSection } from "@/components/sections/service-strip";
 import { IconGridSection } from "@/components/sections/icon-grid";
 import { BenefitsSection } from "@/components/sections/benefits";
 import { LawBannerSection } from "@/components/sections/law-banner";
-import { ProcessSection } from "@/components/sections/process";
 import { ReviewsSection } from "@/components/sections/reviews";
 import { FaqSection } from "@/components/sections/faq";
 import { SiteFooter } from "@/components/sections/site-footer";
@@ -18,11 +17,10 @@ export default function Home() {
       <main>
         <HeroSection />
         <MarqueeSection />
+        <LawBannerSection />
         <ServiceStripSection />
         <IconGridSection />
         <BenefitsSection />
-        <LawBannerSection />
-        <ProcessSection />
         <ReviewsSection />
         <FaqSection />
       </main>
