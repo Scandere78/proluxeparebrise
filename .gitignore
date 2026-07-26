@@ -18,6 +18,9 @@
 .DS_Store
 *.pem
 
+# sources graphiques (flyers, BAT) — trop lourdes pour l'historique
+/*.pdf
+
 # debug
 npm-debug.log*
 yarn-debug.log*
