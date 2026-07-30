@@ -28,10 +28,23 @@ function PriceTag({
   );
 }
 
+/** Une offre de l'encart : intitulé de prestation au-dessus, montant en dessous. */
+function Offer({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col items-center gap-1">
+      <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/70">
+        {label}
+      </span>
+      <span className="display text-[22px] text-white sm:text-[28px]">{children}</span>
+    </div>
+  );
+}
+
 export function HeroSection() {
   return (
     <header id="hero" className="relative isolate overflow-hidden bg-blue-ink">
-      <div className="relative flex min-h-[max(620px,80vh)] w-full items-center justify-center py-24">
+      {/* pt = hauteur de la navbar posée par-dessus ; le centrage se fait dans la zone restante */}
+      <div className="relative flex min-h-[100svh] w-full items-center justify-center pb-16 pt-[112px]">
         {/* Full-bleed photo */}
         <Image
           src="/lunette-arriere.png"
@@ -75,39 +88,29 @@ export function HeroSection() {
           className="relative z-10 flex flex-col items-center px-5 text-center"
         >
           <h1
-            className="display mt-6 text-white text-balance"
-            style={{ fontSize: "clamp(48px, 7.5vw, 100px)" }}
+            className="display text-white text-balance"
+            style={{ fontSize: "clamp(38px, 6.2vw, 86px)" }}
           >
-            Votre pare-brise,
+            Pour tout remplacement
             <br />
-            <span className="text-red">notre signature.</span>
+            de <span className="text-red">pare-brise</span>
           </h1>
 
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-8 w-full max-w-[620px] rounded-sm border border-white/20 bg-blue-ink/45 px-6 py-5 backdrop-blur-[2px] sm:px-8"
+            className="mt-[clamp(18px,3vh,30px)] w-full max-w-[620px] rounded-sm border border-white/20 bg-blue-ink/45 px-6 py-[clamp(14px,2.2vh,20px)] backdrop-blur-[2px] sm:px-8"
           >
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/70">
-                Pour tout remplacement de pare-brise
-              </span>
-              <span className="display text-[24px] text-white sm:text-[30px]">
-                200 € offerts <span className="text-red">ou 4 pneus offerts</span>
-              </span>
-            </div>
+            <Offer label="Pare-brise">
+              200 € offerts <span className="text-red">ou 4 pneus offerts</span>
+            </Offer>
 
-            <div className="my-4 h-px bg-white/15" />
+            <div className="my-[clamp(10px,1.8vh,16px)] h-px bg-white/15" />
 
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/70">
-                Carrosserie · Mécanique · Pièces détachées
-              </span>
-              <span className="display text-[24px] text-white sm:text-[30px]">
-                200 € offerts
-              </span>
-            </div>
+            <Offer label="Carrosserie · Mécanique · Pièces détachées">
+              200 € offerts
+            </Offer>
           </motion.div>
 
           {/* Étiquettes — repliées sous l'encart quand il n'y a plus de place sur les côtés */}
@@ -115,7 +118,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.55, delay: 0.75, ease: easeOut }}
-            className="mt-7 flex flex-wrap items-center justify-center gap-4 xl:hidden"
+            className="mt-[clamp(16px,2.4vh,26px)] flex flex-wrap items-center justify-center gap-4 xl:hidden"
           >
             <PriceTag className="-rotate-[6deg]">Des prix imbattables</PriceTag>
             <PriceTag className="rotate-[6deg]">Pneu neuf</PriceTag>
@@ -125,7 +128,7 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-9 flex flex-col items-center gap-5 sm:flex-row sm:gap-8"
+            className="mt-[clamp(18px,3vh,32px)] flex flex-col items-center gap-5 sm:flex-row sm:gap-8"
           >
             <a
               href="#rdv"
@@ -153,7 +156,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9, ease: easeOut }}
-            className="mt-9"
+            className="mt-[clamp(16px,2.6vh,28px)]"
           >
             <GoogleBadge />
           </motion.div>

@@ -18,9 +18,13 @@ const NAV_LINKS = [
 export function SiteNav() {
   const [active, setActive] = useState("hero");
   const [open, setOpen] = useState(false);
+  /** false = posée sur le hero (transparente) · true = décollée (blanche) */
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+
       const y = window.scrollY + 120;
       let current = NAV_LINKS[0].id;
       for (const l of NAV_LINKS) {
@@ -43,11 +47,23 @@ export function SiteNav() {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 border-b border-line bg-white py-[14px] shadow-[0_1px_20px_rgba(5,42,68,0.06)]">
+      <nav
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color,padding,box-shadow] duration-300",
+          scrolled
+            ? "border-line bg-white py-[10px] shadow-[0_1px_20px_rgba(5,42,68,0.08)]"
+            : "border-transparent bg-transparent py-[14px]"
+        )}
+      >
         <div className="wrap flex items-center gap-3 sm:gap-6">
-          <Brand showText={false} markSize={64} />
+          <Brand showText={false} markSize={scrolled ? 52 : 64} />
 
-          <div className="mx-auto hidden items-center gap-1 rounded-full bg-blue-soft p-[6px] lg:flex">
+          <div
+            className={cn(
+              "mx-auto hidden items-center gap-1 rounded-full p-[6px] transition-colors duration-300 lg:flex",
+              scrolled ? "bg-blue-soft" : "bg-white/10 backdrop-blur-sm"
+            )}
+          >
             {NAV_LINKS.map((l) => (
               <a
                 key={l.id}
@@ -55,8 +71,12 @@ export function SiteNav() {
                 className={cn(
                   "rounded-full px-[18px] py-[10px] text-[12px] font-bold uppercase tracking-[0.06em] transition-colors",
                   active === l.id
-                    ? "bg-blue text-white"
-                    : "text-ink-dim hover:bg-white hover:text-blue"
+                    ? scrolled
+                      ? "bg-blue text-white"
+                      : "bg-white text-blue-ink"
+                    : scrolled
+                      ? "text-ink-dim hover:bg-white hover:text-blue"
+                      : "text-white hover:bg-white/20"
                 )}
               >
                 {l.label}
@@ -78,9 +98,15 @@ export function SiteNav() {
             type="button"
             aria-label="Menu"
             onClick={() => setOpen(true)}
-            className="ml-auto grid h-11 w-11 place-items-center rounded-lg bg-blue-soft lg:hidden"
+            className={cn(
+              "ml-auto grid h-11 w-11 place-items-center rounded-lg transition-colors duration-300 lg:hidden",
+              scrolled ? "bg-blue-soft" : "bg-white/15 backdrop-blur-sm"
+            )}
           >
-            <Menu className="h-[22px] w-[22px] text-blue-ink" strokeWidth={2.5} />
+            <Menu
+              className={cn("h-[22px] w-[22px]", scrolled ? "text-blue-ink" : "text-white")}
+              strokeWidth={2.5}
+            />
           </button>
         </div>
       </nav>

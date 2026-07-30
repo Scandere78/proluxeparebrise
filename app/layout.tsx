@@ -63,7 +63,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${saira.variable} ${manrope.variable} ${jetbrains.variable}`}>
+    // suppressHydrationWarning : certaines extensions de navigateur (TrendTrack,
+    // Grammarly…) ajoutent des attributs sur <html> avant l'hydratation. Ne
+    // couvre que les attributs de cette balise, pas le contenu de l'app.
+    <html
+      lang="fr"
+      className={`${saira.variable} ${manrope.variable} ${jetbrains.variable}`}
+      suppressHydrationWarning
+    >
       <body>
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
